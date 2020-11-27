@@ -1,0 +1,63 @@
+version: '2'
+
+networks:
+  cb-network:
+  monitoring:
+
+services:
+  cloudberry-cb:
+    networks:
+      - cb-network
+    container_name: cloudberry-cb
+    image: olliekrk/cloudberry:latest
+    ports:
+      - 9000:9000
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod
+      - TELEGRAF_HOST=telegraf-cb
+    depends_on:
+      - kafka-cb
+  cloudberry-ng:
+    networks:
+      - cb-network
+    container_name: cloudberry-ng
+    image: olliekrk/cloudberry-ng:latest
+    ports:
+      - 90:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+  kafka-cb:
+    networks:
+      - cb-network
+    extends:
+      file: kafka.yml
+      service: kafka-cb
+    depends_on:
+      - zookeeper-cb
+  zookeeper-cb:
+    networks:
+      - cb-network
+    extends:
+      file: kafka.yml
+      service: zookeeper-cb
+  mongodb-cb:
+    networks:
+      - cb-network
+    extends:
+      file: mongodb.yml
+      service: mongodb-cb
+  influxdb-cb:
+    networks:
+      - cb-network
+    extends:
+      file: influxdb.yml
+      service: influxdb-cb
+  telegraf-cb:
+    networks:
+      - cb-network
+    extends:
+      file: monitoring.yml
+      service: telegraf-cb
+    depends_on:
+      - influxdb-cb
