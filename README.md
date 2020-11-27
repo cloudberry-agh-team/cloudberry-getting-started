@@ -21,9 +21,8 @@
 
 ## Wymagania wstępne
 
-- JRE 15
-- Docker and docker-compose
-- Python 3.8 for notebooks
+- Docker, docker-compose
+- Python 3.8 (Jupyter Notebooks)
 
 Należy upewnić się, że następujące porty sieciowe są lokalnie dostępne:
 * 9000 TCP - dla aplikacji serwerowej cloudberry-cb
