@@ -64,7 +64,7 @@ Dodatkowo
 
 * Demonstracyjne przykłady użycia aplikacji zwarte w plikach Jupyter Notebook znajdują się w katalogu `cloudberry-py`. Przed użyciem biblioteki Python należy zainstalować niezbędne biblioteki z poziomu tego katalogu wywołując `python3 -m pip install -r requirements.txt`.
 * Przykładowe dane akceptowane przez bibliotekę są dostępne w folderze `cloudberry-py/data`.
-* Kod biblioteki znajduje się w `cloudberry-py/cloudberry`.
+* Kod biblioteki znajduje się w `cloudberry-py/cloudberry`. TODO - zrobić release :)
 
 ---
 
