@@ -67,6 +67,13 @@ Dodatkowo
 
 ---
 
+## Dokumentacja
+
+* Dokumentacja HTML dla biblioteki cloudberry-py dostępna jest w folderze `cloudberry-py/docs`
+* Biblioteka `cloudberry-py` dla języka Python może zostać zainstalowana poleceniem: `pip install -i https://test.pypi.org/simple/ cloudberry`. 
+
+---
+
 ## Team
 
 | <a href="http://github.com/mimagiera" target="_blank">**Michał Magiera**</a> | <a href="http://github.com/olliekrk" target="_blank">**Olgierd Królik**</a> |
